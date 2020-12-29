@@ -3,7 +3,7 @@ import axios from 'axios'
 export const AddToCard = (id, qty) => async (dispatch, getState) => {
 
      const { data } = await axios.get(`/api/product/${id}`)
-     console.log(data)
+
      dispatch(
           {
                type: CARD_ADD_ITEM,
@@ -20,7 +20,7 @@ export const AddToCard = (id, qty) => async (dispatch, getState) => {
           }
      )
 
-     localStorage.setItem('cartItem', JSON.stringify(getState().cart.cartItems))
+     localStorage.setItem('cartItem', JSON.stringify(getState().cart.cardItems))
 
 
 }
